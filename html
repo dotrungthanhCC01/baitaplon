@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cho Thuê Phòng Trọ Sinh Viên Giá Rẻ Hà Nội</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">SWEET HOME!</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Tin Tức</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="login-btn" onclick="openModal('loginModal')">Đăng Nhập</a>
+                <a href="#" class="register-btn" onclick="openModal('registerModal')">Đăng Ký</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="search-bar">
+            <form>
+                <input type="text" placeholder="Tìm kiếm phòng trọ...">
+                <button type="submit">Tìm Kiếm</button>
+            </form>
+        </section>
+        <section class="filter-bar">
+            <section class="location-filter">
+                <label for="location-range">Chọn Khu Vực:</label>
+                <select id="location-range">
+                    <option value="all">Tất cả khu vực</option>
+                    <option value="Hoàn Kiếm">Hoàn Kiếm</option>
+                    <option value="Ba Đình">Ba Đình</option>
+                    <option value="Đống Đa">Đống Đa</option>
+                    <option value="Cầu Giấy">Cầu Giấy</option>
+                    <option value="Thanh Xuân">Thanh Xuân</option>
+                    <option value="Hai Bà Trưng">Hai Bà Trưng</option>
+                    <option value="Tây Hồ">Tây Hồ</option>
+                    <option value="Hà Đông">Hà Đông</option>
+                </select>
+            </section>
+            <section class="price-filter">
+                <label for="price-range">Chọn Mức Giá:</label>
+                <select id="price-range">
+                    <option value="all">Tất cả mức giá</option>
+                    <option value="0-1000000">Dưới 1 triệu</option>
+                    <option value="1000000-3000000">1 - 3 triệu</option>
+                    <option value="3000000-5000000">3 - 5 triệu</option>
+                    <option value="5000000-10000000">5 - 10 triệu</option>
+                    <option value="10000000-40000000">10 - 40 triệu</option>
+                    <option value="40000000-70000000">40 - 70 triệu</option>
+                    <option value="70000000-100000000">70 - 100 triệu</option>
+                </select>
+            </section>
+            <section class="area-filter">
+                <label for="area-range">Chọn Diện Tích:</label>
+                <select id="area-range">
+                    <option value="all">Tất cả diện tích</option>
+                    <option value="0-20">Dưới 20m<sup>2</sup></option>
+                    <option value="20-40">20 - 40m<sup>2</sup></option>
+                    <option value="40-60">40 - 60m<sup>2</sup></option>
+                    <option value="60-80">60 - 80m<sup>2</sup></option>
+                    <option value="80-100">80 - 100m<sup>2</sup></option>
+                    <option value="100-150">100 - 150m<sup>2</sup></option>
+                    <option value="150-200">150 - 200m<sup>2</sup></option>
+                </select>
+            </section>
+        </section>
+        <section class="listings">
+            <!-- Listings will be dynamically inserted here -->
+        </section>
+        <section class="pagination">
+            <a href="#" class="prev-page">&laquo;</a>
+            <a href="#" class="page-link active" data-page="1">1</a>
+            <a href="#" class="page-link" data-page="2">2</a>
+            <a href="#" class="page-link" data-page="3">3</a>
+            <a href="#" class="page-link" data-page="4">4</a>
+            <a href="#" class="page-link" data-page="5">5</a>
+            <a href="#" class="next-page">&raquo;</a>
+        </section>
+    </main>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+                <label for="loginPassword">Mật Khẩu:</label>
+                <input type="password" id="loginPassword" name="password" required>
+                <button type="button" onclick="handleLogin(event)">Đăng Nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Đăng Ký</h2>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <label for="registerName">Tên:</label>
+                <input type="text" id="registerName" name="name" required>
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="email" required>
+                <label for="registerPassword">Mật Khẩu:</label>
+                <input type="password" id="registerPassword" name="password" required>
+                <button type="button" onclick="handleRegister(event)">Đăng Ký</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
